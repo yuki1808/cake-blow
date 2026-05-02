@@ -1,116 +1,98 @@
 body {
-  background-color: #004d40; /* Verde oscuro elegante */
+  background-color: #004d40; /* Verde oscuro */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Alinea hacia arriba para dar más espacio */
   height: 100vh;
   margin: 0;
   overflow: hidden;
-  color: #ffffff; /* Texto general en blanco */
+  color: #ffffff;
 }
 
-/* El título romántico en blanco */
 h1 {
-  color: #ffffff !important;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 2.2rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  letter-spacing: 5px; /* Espaciado moderno entre letras */
+  color: #ffffff;
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
 }
 
 .candle-count-display {
   background: #ffffff;
-  color: #004d40; /* Texto del contador en verde oscuro */
-  padding: 12px 25px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  font-family: 'Segoe UI', sans-serif;
+  color: #004d40;
+  padding: 10px 25px;
+  border-radius: 50px;
+  margin-bottom: 80px; /* Mucho espacio para las velas */
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   z-index: 10;
 }
 
-/* Pastel Tres Leches MÁS GRANDE */
 .cake {
   position: relative;
-  width: 350px; /* Aumentado de 280px */
-  height: 180px; /* Aumentado de 140px */
-  background: #fdf5e6; /* Color bizcocho mojadito */
+  width: 340px;
+  height: 160px;
+  background: #fdf5e6;
   border-radius: 10px;
-  box-shadow: inset 0 -20px 40px rgba(210, 180, 140, 0.5);
-  cursor: pointer; /* Indica que se puede tocar */
+  box-shadow: inset 0 -15px 30px rgba(210, 180, 140, 0.4);
+  margin-top: 20px;
 }
 
-/* La crema batida de arriba MÁS GRANDE */
 .icing {
   position: absolute;
-  top: -20px;
+  top: -15px;
   left: 0;
   width: 100%;
-  height: 55px; /* Aumentado */
+  height: 50px;
   background: #ffffff; 
   border-radius: 10px 10px 5px 5px;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
 
-/* Efecto de canela espolvoreada */
-.icing::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-image: radial-gradient(#d35400 1.5px, transparent 1.5px);
-  background-size: 12px 12px;
-  opacity: 0.15;
-  border-radius: 10px 10px 0 0;
-}
-
-/* Gotas de crema */
 .drip {
   background: #ffffff;
-  width: 40px;
-  height: 50px;
+  width: 35px;
+  height: 45px;
   border-radius: 0 0 20px 20px;
   position: absolute;
-  top: 25px;
+  top: 20px;
 }
-.drip1 { left: 40px; height: 65px; }
-.drip2 { left: 160px; height: 50px; }
-.drip3 { left: 270px; height: 60px; }
+.drip1 { left: 40px; height: 60px; }
+.drip2 { left: 150px; height: 40px; }
+.drip3 { left: 260px; height: 55px; }
 
-/* El plato */
 .plate {
   position: absolute;
-  bottom: -30px;
-  left: -25px;
-  width: 400px; /* Aumentado */
-  height: 30px;
+  bottom: -25px;
+  left: -20px;
+  width: 380px;
+  height: 25px;
   background: #f0f0f0;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  border-radius: 10px;
 }
 
-/* Las velas (azules para contrastar con el verde) */
+/* Velas */
 .candle {
   background: linear-gradient(to bottom, #3498db, #2980b9);
-  width: 15px; /* Un poco más anchas */
-  height: 60px; /* Un poco más altas */
+  width: 12px;
+  height: 50px;
   position: absolute;
-  top: -45px;
-  border-radius: 4px;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  z-index: 5;
 }
 
 .flame {
   background: radial-gradient(circle, #ffeb3b, #ff9800);
-  width: 20px;
-  height: 30px;
+  width: 16px;
+  height: 24px;
   border-radius: 50% 50% 20% 20%;
   position: absolute;
-  top: -30px;
-  left: -2.5px;
+  top: -24px;
+  left: -2px;
   animation: flicker 0.1s infinite alternate;
 }
 
@@ -119,25 +101,21 @@ h1 {
   to { transform: scale(1.1); opacity: 1; }
 }
 
-/* Estilos para el Confeti (se activarán por JS) */
+/* Confeti */
 .confetti-container {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  pointer-events: none; /* No interfiere con los clics */
-  z-index: 999; /* Por encima de todo */
+  pointer-events: none;
+  z-index: 999;
 }
-
 .confetti {
   position: absolute;
   width: 10px; height: 10px;
-  background-color: #f00; /* Color base */
-  opacity: 0;
   animation: confetti-fall 3s ease-out forwards;
 }
-
 @keyframes confetti-fall {
   0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
   100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
   }
-  
+    
