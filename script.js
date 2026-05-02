@@ -62,8 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (blownOut > 0) {
-      updateCandleCount();
-    }
+  updateCandleCount();
+  lanzarConfeti();
+      }
   }
 
   if (navigator.mediaDevices.getUserMedia) {
