@@ -58,7 +58,14 @@ return max > 45;
       candles.forEach((candle) => {
         if (!candle.classList.contains("out") && Math.random() > 0.5) {
           candle.classList.add("out");
-          blownOut++;
+
+// 🔥 eliminar la llama visualmente
+const flame = candle.querySelector(".flame");
+if (flame) {
+  flame.remove();
+}
+
+blownOut++;
         }
       });
     }
