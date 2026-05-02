@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
     addCandle(left, top);
   });
 
-  function isBlowing() {
-    let blowStrength = 0;
+  let blowStrength = 0;
+let lastBlowTime = 0;
 
 function isBlowing() {
   const bufferLength = analyser.frequencyBinCount;
@@ -50,17 +50,22 @@ function isBlowing() {
     }
   }
 
-  // si hay ruido fuerte
+  const now = Date.now();
+
   if (max > 70) {
-    blowStrength++;
+    // si sigue soplando, aumenta
+    if (now - lastBlowTime < 500) {
+      blowStrength++;
+    } else {
+      blowStrength = 1;
+    }
+    lastBlowTime = now;
   } else {
     blowStrength = 0;
   }
 
-  // solo soplido real (no ruido corto)
   return blowStrength > 2;
       }
-  }
 
   function blowOutCandles() {
     let blownOut = 0;
