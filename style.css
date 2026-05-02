@@ -10,11 +10,7 @@ body {
   font-family: 'Montserrat', sans-serif !important;
   color: #ffffff !important;
   overflow: hidden !important;
-
-  /* FONDO DE RE:ZERO CON FILTRO OSCURO */
-  background: linear-gradient(rgba(0, 40, 30, 0.7), rgba(0, 40, 30, 0.7)), 
-              url('https://pbs.twimg.com/media/GH854vbaEAAZl-K.jpg') no-repeat center center fixed !important;
-  background-size: cover !important;
+  background: #0a1a14 !important; /* Verde oscuro */
 }
 
 h1 {
@@ -24,30 +20,19 @@ h1 {
   text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
 }
 
-.subaru-phrase {
-  font-style: italic;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-}
-
 .candle-count-display {
-  background: rgba(255, 255, 255, 0.9);
-  color: #004d40;
+  background: rgba(255, 255, 255, 0.15);
   padding: 8px 20px;
   border-radius: 50px;
   margin-bottom: 60px;
-  font-weight: bold;
-  z-index: 10;
 }
 
-/* EL PASTEL */
 .cake {
   position: relative;
-  width: 300px;
-  height: 140px;
+  width: 280px;
+  height: 130px;
   background: #fdf5e6;
-  border-radius: 8px;
+  border-radius: 10px;
   z-index: 5;
 }
 
@@ -55,51 +40,41 @@ h1 {
   position: absolute;
   top: -15px;
   width: 100%;
-  height: 45px;
+  height: 40px;
   background: #ffffff;
-  border-radius: 8px 8px 4px 4px;
+  border-radius: 10px 10px 5px 5px;
 }
 
 /* VELAS CELESTES */
 .candle {
   background: linear-gradient(to bottom, #87CEEB, #00BFFF) !important;
-  width: 12px;
-  height: 45px;
+  width: 10px;
+  height: 40px;
   position: absolute;
-  border-radius: 3px;
+  border-radius: 2px;
   z-index: 6;
 }
 
 .flame {
   background: radial-gradient(circle, #fff, #ffeb3b, #ff9800);
-  width: 14px;
-  height: 22px;
+  width: 12px;
+  height: 20px;
   border-radius: 50% 50% 20% 20%;
   position: absolute;
-  top: -22px;
+  top: -20px;
   left: -1px;
-  animation: flicker 0.1s infinite alternate;
 }
 
-@keyframes flicker {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
-}
-
-/* SISTEMA DE CONFETI */
+/* CONFETI */
 .confetti {
   position: fixed;
   width: 10px;
   height: 10px;
-  z-index: 1000;
-  top: -10px;
+  top: -20px;
+  z-index: 9999;
   animation: fall 3s linear forwards;
 }
 
 @keyframes fall {
-  to { 
-    transform: translateY(100vh) rotate(720deg); 
-    opacity: 0; 
-  }
-  }
-  
+  to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+                              }
