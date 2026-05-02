@@ -11,9 +11,9 @@ body {
   color: #ffffff !important;
   overflow: hidden !important;
 
-  /* FUERZA BRUTA PARA EL FONDO */
-  background: linear-gradient(rgba(0, 40, 30, 0.7), rgba(0, 40, 30, 0.7)), 
-              url('https://pbs.twimg.com/media/GH854vbaEAAZl-K?format=jpg&name=large') no-repeat center center fixed !important;
+  /* FONDO DE RE:ZERO CON FILTRO OSCURO */
+  background: linear-gradient(rgba(0, 40, 30, 0.6), rgba(0, 40, 30, 0.6)), 
+              url('https://pbs.twimg.com/media/1000549988.jpg') no-repeat center center fixed !important;
   background-size: cover !important;
 }
 
@@ -41,6 +41,7 @@ h1 {
   z-index: 10;
 }
 
+/* EL PASTEL */
 .cake {
   position: relative;
   width: 300px;
@@ -59,6 +60,7 @@ h1 {
   border-radius: 8px 8px 4px 4px;
 }
 
+/* VELAS CELESTES */
 .candle {
   background: linear-gradient(to bottom, #87CEEB, #00BFFF) !important;
   width: 12px;
@@ -84,6 +86,7 @@ h1 {
   to { transform: scale(1.1); }
 }
 
+/* CONFETI */
 .confetti {
   position: fixed;
   width: 10px;
@@ -96,4 +99,4 @@ h1 {
 @keyframes fall {
   to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
   }
-    
+  
