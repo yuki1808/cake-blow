@@ -102,3 +102,6 @@ h1 { margin-top: 40px; text-shadow: 2px 2px 8px #000; }
       0 0 40px #7c3aed;
   }
 }
+.candle.out .flame {
+  display: none;
+    }
