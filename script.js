@@ -37,16 +37,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function isBlowing() {
     const bufferLength = analyser.frequencyBinCount;
-    const dataArray = new Uint8Array(bufferLength);
-    analyser.getByteFrequencyData(dataArray);
+const dataArray = new Uint8Array(bufferLength);
+analyser.getByteFrequencyData(dataArray);
 
-    let sum = 0;
-    for (let i = 0; i < bufferLength; i++) {
-      sum += dataArray[i];
-    }
-    let average = sum / bufferLength;
+let max = 0;
+for (let i = 0; i < bufferLength; i++) {
+  if (dataArray[i] > max) {
+    max = dataArray[i];
+  }
+}
 
-    return average > 10; //
+// sensibilidad (puedes ajustar)
+return max > 45;
   }
 
   function blowOutCandles() {
