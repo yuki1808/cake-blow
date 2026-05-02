@@ -7,8 +7,40 @@ body {
     background-size: cover !important;
 }
 h1 { margin-top: 40px; text-shadow: 2px 2px 8px #000; }
-.cake { position: relative; width: 250px; height: 120px; background: #fdf5e6; border-radius: 10px; margin-top: 20px; }
-.icing { position: absolute; top: -10px; width: 100%; height: 35px; background: #fff; border-radius: 10px; }
+.cake {
+  position: relative;
+  width: 260px;
+  height: 130px;
+  background: linear-gradient(to bottom, #fff3d6, #f5deb3);
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 
+    0 8px 20px rgba(0,0,0,0.3),
+    inset 0 -5px 10px rgba(0,0,0,0.2);
+}
+
+/* crema superior */
+.icing {
+  position: absolute;
+  top: -12px;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, #ffffff, #f8f8f8);
+  border-radius: 12px;
+  box-shadow: inset 0 -3px 5px rgba(0,0,0,0.1);
+}
+
+/* efecto de goteo */
+.icing::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  top: 30px;
+  background: radial-gradient(circle at 20% 0, #fff 10px, transparent 11px),
+              radial-gradient(circle at 50% 0, #fff 12px, transparent 13px),
+              radial-gradient(circle at 80% 0, #fff 10px, transparent 11px);
+                    }
 .candle { background: #87CEEB; width: 8px; height: 35px; position: absolute; }
 .flame {
   position: absolute;
