@@ -48,7 +48,7 @@ for (let i = 0; i < bufferLength; i++) {
 }
 
 // sensibilidad (puedes ajustar)
-return max > 45;
+return max > 70;
   }
 
   function blowOutCandles() {
