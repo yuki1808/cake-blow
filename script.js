@@ -54,7 +54,7 @@ return max > 45;
   function blowOutCandles() {
     let blownOut = 0;
 
-    if (true) {
+    if (isBlowing()) {
       candles.forEach((candle) => {
         if (!candle.classList.contains("out") && Math.random() > 0.5) {
           candle.classList.add("out");
