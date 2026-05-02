@@ -84,3 +84,15 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("getUserMedia not supported on your browser!");
   }
 });
+function lanzarConfeti() {
+  for (let i = 0; i < 40; i++) {
+    const confeti = document.createElement("div");
+    confeti.className = "confeti";
+    confeti.style.left = Math.random() * window.innerWidth + "px";
+    confeti.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 60%)`;
+    confeti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+    document.body.appendChild(confeti);
+
+    setTimeout(() => confeti.remove(), 4000);
+  }
+  }
