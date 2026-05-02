@@ -36,19 +36,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function isBlowing() {
-    const bufferLength = analyser.frequencyBinCount;
-const dataArray = new Uint8Array(bufferLength);
-analyser.getByteFrequencyData(dataArray);
+    let blowStrength = 0;
 
-let max = 0;
-for (let i = 0; i < bufferLength; i++) {
-  if (dataArray[i] > max) {
-    max = dataArray[i];
+function isBlowing() {
+  const bufferLength = analyser.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+  analyser.getByteFrequencyData(dataArray);
+
+  let max = 0;
+  for (let i = 0; i < bufferLength; i++) {
+    if (dataArray[i] > max) {
+      max = dataArray[i];
+    }
   }
-}
 
-// sensibilidad (puedes ajustar)
-return max > 70;
+  // si hay ruido fuerte
+  if (max > 70) {
+    blowStrength++;
+  } else {
+    blowStrength = 0;
+  }
+
+  // solo soplido real (no ruido corto)
+  return blowStrength > 2;
+      }
   }
 
   function blowOutCandles() {
