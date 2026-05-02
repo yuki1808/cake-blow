@@ -1,92 +1,94 @@
 body {
-  background-color: #004d40; /* Verde oscuro */
+  /* Fondo con wallpaper de Re:Zero (suave para no opacar) */
+  background: linear-gradient(rgba(0, 77, 64, 0.85), rgba(0, 77, 64, 0.85)), 
+              url('https://images7.alphacoders.com/713/713303.png');
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Alinea hacia arriba para dar más espacio */
+  justify-content: flex-start;
   height: 100vh;
   margin: 0;
   overflow: hidden;
   color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  letter-spacing: 5px; /* Espaciado moderno entre letras */
-  color: #ffffff;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+  letter-spacing: 5px;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+}
+
+.subaru-phrase {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .candle-count-display {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
   color: #004d40;
-  padding: 10px 25px;
+  padding: 8px 20px;
   border-radius: 50px;
-  margin-bottom: 80px; /* Mucho espacio para las velas */
-  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 70px;
   font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
   z-index: 10;
 }
 
+/* El Pastel Tres Leches se mantiene igual */
 .cake {
   position: relative;
-  width: 340px;
-  height: 160px;
+  width: 320px;
+  height: 150px;
   background: #fdf5e6;
-  border-radius: 10px;
-  box-shadow: inset 0 -15px 30px rgba(210, 180, 140, 0.4);
-  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .icing {
   position: absolute;
   top: -15px;
-  left: 0;
   width: 100%;
-  height: 50px;
-  background: #ffffff; 
-  border-radius: 10px 10px 5px 5px;
+  height: 45px;
+  background: #ffffff;
+  border-radius: 8px 8px 4px 4px;
 }
 
-.drip {
-  background: #ffffff;
-  width: 35px;
-  height: 45px;
-  border-radius: 0 0 20px 20px;
-  position: absolute;
-  top: 20px;
-}
-.drip1 { left: 40px; height: 60px; }
-.drip2 { left: 150px; height: 40px; }
-.drip3 { left: 260px; height: 55px; }
+.drip { background: #ffffff; width: 35px; border-radius: 0 0 20px 20px; position: absolute; top: 20px; }
+.drip1 { left: 30px; height: 50px; }
+.drip2 { left: 140px; height: 40px; }
+.drip3 { left: 250px; height: 55px; }
 
 .plate {
   position: absolute;
-  bottom: -25px;
+  bottom: -20px;
   left: -20px;
-  width: 380px;
-  height: 25px;
-  background: #f0f0f0;
+  width: 360px;
+  height: 20px;
+  background: #e0e0e0;
   border-radius: 10px;
 }
 
-/* Velas */
+/* VELAS CELESTES (Color de Rem) */
 .candle {
-  background: linear-gradient(to bottom, #3498db, #2980b9);
+  background: linear-gradient(to bottom, #87CEEB, #00BFFF); /* Celestes brillantes */
   width: 12px;
   height: 50px;
   position: absolute;
   border-radius: 3px;
   z-index: 5;
+  box-shadow: 0 0 8px rgba(135, 206, 235, 0.5);
 }
 
 .flame {
-  background: radial-gradient(circle, #ffeb3b, #ff9800);
+  background: radial-gradient(circle, #fff, #ffeb3b, #ff9800);
   width: 16px;
   height: 24px;
   border-radius: 50% 50% 20% 20%;
@@ -101,21 +103,8 @@ h1 {
   to { transform: scale(1.1); opacity: 1; }
 }
 
-/* Confeti */
-.confetti-container {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 999;
-}
-.confetti {
-  position: absolute;
-  width: 10px; height: 10px;
-  animation: confetti-fall 3s ease-out forwards;
-}
-@keyframes confetti-fall {
-  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-  }
-    
+/* Confeti (Lluvia de colores) */
+.confetti-container { position: fixed; top: 0; width: 100%; height: 100%; pointer-events: none; z-index: 999; }
+.confetti { position: absolute; width: 8px; height: 8px; animation: fall 3s linear forwards; }
+@keyframes fall { to { transform: translateY(100vh) rotate(720deg); opacity: 0; } }
+  
