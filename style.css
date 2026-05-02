@@ -12,8 +12,8 @@ body {
   overflow: hidden !important;
 
   /* FONDO DE RE:ZERO CON FILTRO OSCURO */
-  background: linear-gradient(rgba(0, 40, 30, 0.6), rgba(0, 40, 30, 0.6)), 
-              url('https://pbs.twimg.com/media/1000549988.jpg') no-repeat center center fixed !important;
+  background: linear-gradient(rgba(0, 40, 30, 0.7), rgba(0, 40, 30, 0.7)), 
+              url('https://pbs.twimg.com/media/GH854vbaEAAZl-K.jpg') no-repeat center center fixed !important;
   background-size: cover !important;
 }
 
@@ -86,7 +86,7 @@ h1 {
   to { transform: scale(1.1); }
 }
 
-/* CONFETI */
+/* SISTEMA DE CONFETI */
 .confetti {
   position: fixed;
   width: 10px;
@@ -97,6 +97,9 @@ h1 {
 }
 
 @keyframes fall {
-  to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  to { 
+    transform: translateY(100vh) rotate(720deg); 
+    opacity: 0; 
+  }
   }
   
