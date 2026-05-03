@@ -120,3 +120,19 @@ function lanzarConfeti() {
     setTimeout(() => confeti.remove(), 4000);
   }
 }
+// Localizamos el archivo de audio
+const musica = document.getElementById('musicaCumple');
+
+// Función para intentar reproducir
+function reproducirMusica() {
+    if (musica && musica.paused) {
+        musica.play().catch(error => {
+            console.log("El audio espera un clic para sonar");
+        });
+    }
+}
+
+// Esto detecta cuando Isaac toque la pantalla y activa la música
+document.addEventListener('click', reproducirMusica, { once: true });
+document.addEventListener('touchstart', reproducirMusica, { once: true });
+    
