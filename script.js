@@ -66,31 +66,28 @@ function isBlowing() {
 
   return blowStrength > 2;
       }
-
+  
   function blowOutCandles() {
-    let blownOut = 0;
+  let blownOut = 0;
 
-    if (isBlowing()) {
-      candles.forEach((candle) => {
-        if (!candle.classList.contains("out") && Math.random() > 0.5) {
-          candle.classList.add("out");
+  if (isBlowing()) {
+    candles.forEach((candle) => {
+      if (!candle.classList.contains("out") && Math.random() > 0.5) {
+        candle.classList.add("out");
 
-// 🔥 eliminar la llama visualmente
-const flame = candle.querySelector(".flame");
-if (flame) {
-  flame.remove();
-}
+        const flame = candle.querySelector(".flame");
+        if (flame) flame.remove();
 
-blownOut++;
-        }
-      });
-    }
-
-    if (blownOut > 0) {
-  updateCandleCount();
-  lanzarConfeti();
+        blownOut++;
       }
+    });
   }
+
+  if (blownOut > 0) {
+    updateCandleCount();
+    lanzarConfeti();
+  }
+                          }
 
   if (navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices
@@ -115,10 +112,11 @@ function lanzarConfeti() {
     const confeti = document.createElement("div");
     confeti.className = "confeti";
     confeti.style.left = Math.random() * window.innerWidth + "px";
-    confeti.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 60%)`;
+    confeti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
     confeti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+
     document.body.appendChild(confeti);
 
     setTimeout(() => confeti.remove(), 4000);
   }
-  }
+}
